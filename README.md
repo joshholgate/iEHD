@@ -1,0 +1,2 @@
+# iEHD
+ideal electrohydrodynamics simulator
