@@ -18,11 +18,7 @@ If simulating a droplet with charge and an applied field then lines 742-759 shou
 
 A flat liquid surface in a perpendicular electric field can be simulated by commenting out line 26 (lines 18+19 have no effect on the surface-in-field simulation).
 
-Before running the code, ensure an "output" folder has been created in the iEHD working directory. Use of optimization flags is recommended. A simple set of compile-and-run bash commands are
-
-$ mkdir output
-$ g++ -O3 -o iEHD iEHD.cc
-$ ./iEHD
+Before running the code, ensure an "output" folder has been created in the iEHD working directory. Use of optimization flags is recommended for better performance (I use g++'s -O3 flag).
 
 
 
