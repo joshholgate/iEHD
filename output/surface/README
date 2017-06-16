@@ -3,7 +3,7 @@ This folder contains:
  - the folder 'F0.8_profiles' which gives the all grid values at specific times during the simulation of an unstable interface.
  - gnuplot scripts to plot various parameters.
 
-The value of 'F' in the file names is the stability parameter: F^2 = 4*pi*epsilon_0*E^2 / gamma, where E is the electric field strength, gamma is the surface tension and epsilon_0 is the permittivity of free space, 8.85x10^-12 m^-3 kg^-1 s^4 A^2.
+The value of 'F' in the file names is the stability parameter: F = k*gamma / epsilon_0*E*E, where k is the wavenumber of the surface perturbation, E is the electric field strength, gamma is the surface tension and epsilon_0 is the permittivity of free space, 8.85x10^-12 m^-3 kg^-1 s^4 A^2.
 
 Each fluid_params file contains a timeseries of various parameters of the fluid. Column (3) gives the volume of the fluid, column (2) gives the difference between the height of the liquid surface at the centre and outer edge of the simulation (ie. the amplitude of the instability) and column (4) gives the height of the liquid at the outer edge of the simulation.
 
