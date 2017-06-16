@@ -1,0 +1,12 @@
+This folder contains:
+ - fluid_params.dat files for stability of a conducting drop in an electric field.
+ - the folder 'F1.2_profiles' which gives the all grid values at specific times during the simulation of an unstable droplet.
+ - gnuplot scripts to plot various parameters.
+
+The value of 'F' in the file names is the stability parameter: F^2 = 4*pi*epsilon_0*E^2 / gamma, where E is the electric field strength, gamma is the surface tension and epsilon_0 is the permittivity of free space, 8.85x10^-12 m^-3 kg^-1 s^4 A^2.
+
+Each fluid_params file contains a timeseries of various parameters of the fluid. Column (2) gives the volume of the fluid and column (5) gives the aspect ratio of the droplet. Columns (3) and (4) measure the amplitude of the surface perturbation from a spherical shape but these have not been analyzed.
+
+The bash script 'plotA.bash' extracts equilibrium aspect ratios from column (5) of the fluid_params.dat files by using gnuplot to take a time-average of the aspect ratios. The standard deviation of these oscillations is also recorded. The results are saved in 'Avalues.dat' which may be plotted, along with the results of a spheroidal approximation which are stored in 'AE-shape-spheroids.dat', using the gnuplot script 'AE-shape.plt'.
+
+The folder 'F1.2_profiles' includes a gnuplot script to plot the evolution of the liquid surface profile.
