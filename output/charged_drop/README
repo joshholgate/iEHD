@@ -1,6 +1,6 @@
 This folder contains:
- - fluid_params.dat files for stability of conducting surface in an electric field.
- - the folder 'Q1.04_profiles' which gives the all grid values at specific times during the simulation of an unstable interface.
+ - fluid_params.dat files for stability of charged conducting drop.
+ - the folder 'Q1.04_profiles' which gives the all grid values at specific times during the simulation of an unstable droplet.
  - gnuplot scripts to plot various parameters.
 
 The value of 'Q' in the file names is the stability parameter: Q^2 = q^2 / (16*pi^2*epsilon_0*r^3*gamma), where q is the total charge on the droplet, gamma is the surface tension, r is the droplet radius and epsilon_0 is the permittivity of free space, 8.85x10^-12 m^-3 kg^-1 s^4 A^2.
