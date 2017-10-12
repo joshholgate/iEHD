@@ -223,8 +223,8 @@ double set_dt( Grid* grid) {
 	double max_velocity = 0.0;
 	for (int i=1; i<=IMAX; i++) {			// loop such that all interior u and v covered
 		for (int j=1; j<=JMAX; j++) {
-			max_velocity = max( grid->u[i][j], max_velocity);
-			max_velocity = max( grid->v[i][j], max_velocity);
+			max_velocity = max( abs(grid->u[i][j]), max_velocity);	// make sure magnitude is used!
+			max_velocity = max( abs(grid->v[i][j]), max_velocity);
 		}
 	}
 	double dt = 0.5 * min ( 1.0/(INV_H*max_velocity), 0.25/(INV_RE*INV_H*INV_H) );
