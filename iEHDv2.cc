@@ -610,8 +610,8 @@ bool step_grid( Grid* grid, double DT) {
 									+grid->LS[i-1][j-1])*0.25*INV_H*INV_H;
 					R = double(i)-0.5;
 					NR =  - DLSDR / sqrt(DLSDR*DLSDR+DLSDZ*DLSDZ);
-					CURV = NR*INV_H/R    // R should be in length units, not multiples of i
-						-(DLSDZ*DLSDZ*DLSDRR+DLSDR*DLSDR*DLSDZZ-2.0*DLSDR*DLSDZ*DLSDRZ)
+					CURV = - NR*INV_H/R    // R should be in length units, not multiples of i
+						+ (DLSDZ*DLSDZ*DLSDRR+DLSDR*DLSDR*DLSDZZ-2.0*DLSDR*DLSDZ*DLSDRZ)
 						/( sqrt(DLSDR*DLSDR+DLSDZ*DLSDZ)*(DLSDR*DLSDR+DLSDZ*DLSDZ) );
 
 					if ( DLSDR < 0.0 ) {
@@ -636,7 +636,7 @@ bool step_grid( Grid* grid, double DT) {
 						if ( j==1 ) EZ = (grid->E_pot[i][1]-grid->E_pot[i][0])*INV_H;
 					}
 
-					grid->p[i][j] = INV_WE*CURV - (ER*ER+EZ*EZ)*0.5*INV_WEE;
+					grid->p[i][j] = - INV_WE*CURV - (ER*ER+EZ*EZ)*0.5*INV_WEE;
 					if ( isnan(grid->p[i][j]) == true ) {
 						cout << "P_out at boundary cell (i,j) = (" << i << "," << j <<
 							") is nan!" << endl;
